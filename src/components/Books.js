@@ -1,7 +1,9 @@
-import React, { Component } from "react";
-import Book from "./Book";
-import PropTypes from "prop-types";
-import {CardColumns} from "reactstrap";
+import React, {
+  Component
+} from 'react';
+import Book from './Book';
+import PropTypes from 'prop-types';
+import { CardColumns } from 'reactstrap';
 
 class Books extends Component {
   render() {
@@ -23,5 +25,6 @@ class Books extends Component {
 Books.propTypes = {
   books: PropTypes.array.isRequired,
 }
+
 
 export default Books;

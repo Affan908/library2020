@@ -7,7 +7,6 @@ import axios from 'axios';
 class Book extends Component {
   // TODO: Buat state modal dengan nilai default false dan selectedBook dengan default {}
   state = {
-    //isi disini
     modal: false,
     selectedBook:{}
   }
@@ -16,7 +15,6 @@ class Book extends Component {
 
   // TODO: Isi fungsi untuk memanggil method PUT untuk fitur merubah status peminjaman
   EditBook = buku => {
-    // isi disini
     axios.put("https://library2020-api-gilang.herokuapp.com/library/"+buku._id, buku)
       .then(res => {
         // ubah kembali state modal menjadi false
@@ -34,15 +32,14 @@ class Book extends Component {
   onSubmit = e => {
     e.preventDefault();
     // TODO: Panggil fungsi EditBook 
-    // isi disini
     this.EditBook(this.state.selectedBook);
 
   };
 
   render() {
     // TODO: Buat variabel judulBuku, pengarangBuku, genreBuku, dan isDipinjam yang nilainya didapat dari props `book`
-    // isi disini
     const{judulBuku, pengarangBuku, genreBuku, isDipinjam}= this.props.book;
+
     return (
       <div>
         <Card body style={{ marginBottom: '12px', cursor: 'pointer' }} onClick={() => { this.toggle(this.props.book) }}>

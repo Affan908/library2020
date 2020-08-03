@@ -1,36 +1,35 @@
-import React, { Component } from "react";
-import { Col, Button, Form, FormGroup, Label, Input } from "reactstrap";
-import axios from "axios";
+import React, { Component } from 'react';
+import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import axios from 'axios';
 
 class AddBook extends Component {
+
   state = {
     judul: "",
     pengarang: "",
-    genre: "",
+    genre: ""
   };
 
-  onSubmit = (e) => {
+  onSubmit = e => {
     e.preventDefault();
-    console.log(this.state);
+    console.log(this.state)
     const payload = {
       judulBuku: this.state.judul,
       pengarangBuku: this.state.pengarang,
       genreBuku: this.state.genre,
-      isDipinjam: false,
-    };
+      isDipinjam: false
+    }
     this.AddBook(payload);
   };
 
   onChange = (e, val) => {
     this.setState({
-      [val]: e.target.value,
+      [val]: e.target.value
     });
-  };
+  }
   // TODO: Isi fungsi untuk memanggil method POST untuk fitur menambah buku baru
-  AddBook = (buku) => {
-    // isi disini
-    axios
-      .post("https://library2020-api-gilang.herokuapp.com/library", buku)
+  AddBook = buku => {
+    axios.post("https://library2020-api-gilang.herokuapp.com/library", buku)
       .then(res => {
         window.alert("Berhasil!");
         this.setState({
@@ -47,48 +46,21 @@ class AddBook extends Component {
     return (
       <Form>
         <FormGroup row>
-          <Label for="judulBuku" sm={2}>
-            Judul Buku
-          </Label>
+          <Label for="judulBuku" sm={2}>Judul Buku</Label>
           <Col sm={10}>
-            <Input
-              onChange={(e) => this.onChange(e, "judul")}
-              type="judul"
-              name="judul"
-              id="judul"
-              placeholder="isi dengan judul buku"
-              value={this.state.judul}
-            />
+            <Input onChange={(e) => this.onChange(e, 'judul')} type="judul" name="judul" id="judul" placeholder="isi dengan judul buku" value={this.state.judul} />
           </Col>
         </FormGroup>
         <FormGroup row>
-          <Label for="pengarangBuku" sm={2}>
-            Pengarang Buku
-          </Label>
+          <Label for="pengarangBuku" sm={2}>Pengarang Buku</Label>
           <Col sm={10}>
-            <Input
-              onChange={(e) => this.onChange(e, "pengarang")}
-              type="pengarang"
-              name="pengarang"
-              id="pengarang"
-              placeholder="isi dengan nama pengarang"
-              value={this.state.pengarang}
-            />
+            <Input onChange={(e) => this.onChange(e, 'pengarang')} type="pengarang" name="pengarang" id="pengarang" placeholder="isi dengan nama pengarang" value={this.state.pengarang} />
           </Col>
         </FormGroup>
         <FormGroup row>
-          <Label for="genreBuku" sm={2}>
-            Genre Buku
-          </Label>
+          <Label for="genreBuku" sm={2}>Genre Buku</Label>
           <Col sm={10}>
-            <Input
-              onChange={(e) => this.onChange(e, "genre")}
-              type="genre"
-              name="genre"
-              id="genre"
-              placeholder="isi dengan genre buku"
-              value={this.state.genre}
-            />
+            <Input onChange={(e) => this.onChange(e, 'genre')} type="genre" name="genre" id="genre" placeholder="isi dengan genre buku" value={this.state.genre} />
           </Col>
         </FormGroup>
         <div style={{ textAlign: "right" }}>
@@ -98,5 +70,6 @@ class AddBook extends Component {
     );
   }
 }
+
 
 export default AddBook;
