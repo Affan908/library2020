@@ -27,17 +27,20 @@ class AddBook extends Component {
     });
   };
   // TODO: Isi fungsi untuk memanggil method POST untuk fitur menambah buku baru
-  AddBook = buku => {
+  AddBook = (buku) => {
     // isi disini
-    axios.post("https://library2020-api-gilang.herokuapp.com/library", buku).then((res) => {
-      window.alert("Berhasil!");
-      this.setState({
-        judul: "",
-        pengarang: "",
-        genre: "",
-      });
-      console.log(res);
-    });
+    axios
+      .post("https://library2020-api-gilang.herokuapp.com/library", buku)
+      .then(res => {
+        window.alert("Berhasil!");
+        this.setState({
+          judul: "",
+          pengarang: "",
+          genre: ""
+        });
+        console.log(res)
+      }
+      );
   };
 
   render() {
