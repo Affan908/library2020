@@ -22,6 +22,6 @@ class Books extends Component {
 //PropTypes
 Books.propTypes = {
   books: PropTypes.array.isRequired,
-};
+}
 
 export default Books;
