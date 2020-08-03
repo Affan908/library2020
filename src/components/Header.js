@@ -24,7 +24,7 @@ class Header extends Component {
             </NavItem>
           </Nav>
           {/* Ubah [isidDenganNama] menjadi nama peserta  */}
-          <NavbarText> Oleh[Oleh]</NavbarText>
+          <NavbarText> Oleh Oleh</NavbarText>
           </div>
         </Navbar>
       </div>
